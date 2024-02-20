@@ -53,7 +53,7 @@
  </head> 
  <body> 
   <center> 
-   <img width="10%" src="/icon.jpg" /> 
+   <img width="10%" src="../icon.jpg" /> 
    <h1>Scouting</h1> 
    <hr />
    <br />
@@ -255,8 +255,7 @@
                 inputs.forEach(function (input) {
                   formData[input.name] = input.type === 'checkbox' ? input.checked : input.value;
                 });
-                var headers = Object.keys(formData).join(",");
-                csvContent += headers + "\n" + Object.values(formData).join(",");
+                csvContent += "0,"+ Object.values(formData).join(',');
                 var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 var a = document.createElement('a');
                 a.href = URL.createObjectURL(blob);
