@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <title>Scouting - Maple River Robotics 7541</title>
+  <style>
+            body {
+                background-color: #005eb8;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            h1 {
+                color: white;
+            }
+
+            button {
+                font-size: 20px;
+                width: 15%;
+                border-radius: 20%;
+                background-color: #AAAAAA;
+            }
+
+            #inputs {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+            }
+
+            #fsection {
+                background-color: white;
+                color: black;
+                padding: 0px;
+                border-radius: 20px;
+            }
+
+            #ftools {
+                width: 100%;
+                background-color: white;
+                color: black;
+                padding: 0px;
+                border-radius: 20px;
+            }
+            
+            #finput {
+                background-color: #CCCCCC;
+                color: black;
+                padding: -3px;
+                border-radius: 10px;
+				margin-bottom: -10px;
+				margin-top: -10px;
+            }
+ </style> 
+ </head> 
+ <body> 
+  <center> 
+   <img width="10%" src="/icon.jpg" /> 
+   <h1>Scouting</h1> 
+   <hr />
+   <br />
+   <br /> 
+   <div id="inputs"> 
+    <div id="fsection"> 
+     <h2>Prematch</h2> 
+     <div id="finput"> 
+      <p>Scouter Initials</p> 
+      <input name="Prematch_ScouterInitials" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Match Number</p> 
+      <input name="Prematch_MatchNumber" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Robot</p> 
+      <select name="Prematch_Robot"> <option>Red 1</option> <option>Red 2</option> <option>Red 3</option> <option>Blue 1</option> <option>Blue 2</option> <option>Blue 3</option> </select> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Team Number</p> 
+      <input name="Prematch_TeamNumber" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Human Player at Amp</p> 
+      <input name="Prematch_HumanPlayerAtAmp" type="checkbox" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>No Show</p> 
+      <input name="Prematch_NoShow" type="checkbox" /> 
+     </div> 
+     <br /> 
+    </div> 
+    <div id="fsection"> 
+     <h2>Autonomous</h2> 
+     <div id="finput"> 
+      <p>Amp Scored</p> 
+      <input name="Autonomous_AmpScored" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Amp Missed</p> 
+      <input name="Autonomous_AmpMissed" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Speaker Scored</p> 
+      <input name="Autonomous_SpeakerScored" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Speaker Missed</p> 
+      <input name="Autonomous_SpeakerMissed" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Loaded More Notes?</p> 
+      <input name="Autonomous_LoadedMoreNotes" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Auto Foul</p> 
+      <input name="Autonomous_AutoFoul" type="checkbox" /> 
+     </div> 
+     <br /> 
+    </div> 
+    <div id="fsection"> 
+     <h2>Teleop</h2> 
+     <div id="finput"> 
+      <p>Coopertition</p> 
+      <input name="Teleop_Coopertition" type="checkbox" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Amp Scored</p> 
+      <input name="Teleop_AmpScored" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Amp Missed</p> 
+      <input name="Teleop_AmpMissed" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Speaker Scored</p> 
+      <input name="Teleop_SpeakerScored" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Speaker Missed</p> 
+      <input name="Teleop_SpeakerMissed" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Note Pickup Location</p> 
+      <select name="Teleop_NotePickupLocation"> <option>None</option> <option>Ground</option> <option>Manually Set</option> <option>Both</option> </select> 
+     </div> 
+     <br /> 
+    </div> 
+    <div id="fsection"> 
+     <h2>Endgame</h2> 
+     <div id="finput"> 
+      <p>End Position</p> 
+      <select name="Endgame_EndPosition"> <option>No Climb</option> <option>Parked</option> <option>Onstage</option> <option>Spotlight</option> </select> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Note in Trap?</p> 
+      <input name="Endgame_NoteInTrap" type="checkbox" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Harmony</p> 
+      <select name="Endgame_Harmony"> <option>Not Completed</option> <option>First on Chain</option> <option>Second on Chain</option> <option>Third on Chain</option> </select> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>High Note</p> 
+      <select name="Endgame_HighNote"> <option>Not Completed</option> <option>First on Chain</option> <option>Second on Chain</option> <option>Third on Chain</option> </select> 
+     </div> 
+     <br /> 
+    </div> 
+    <div id="fsection"> 
+     <h2>Postmatch</h2> 
+     <div id="finput"> 
+      <p>Offense Skill</p> 
+      <select name="Postmatch_OffenseSkill"> <option>Not Effective</option> <option>Average</option> <option>Very Effective</option> <option>Not Observed</option> </select> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Defense Skill</p> 
+      <select name="Postmatch_DefenseSkill"> <option>Not Effective</option> <option>Average</option> <option>Very Effective</option> <option>Not Observed</option> </select> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Foul</p> 
+      <input name="Postmatch_Foul" type="number" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Died</p> 
+      <input name="Postmatch_Died" type="checkbox" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Tipped Over</p> 
+      <input name="Postmatch_TippedOver" type="checkbox" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Yellow Card</p> 
+      <input name="Postmatch_YellowCard" type="checkbox" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Red Card</p> 
+      <input name="Postmatch_RedCard" type="checkbox" /> 
+     </div> 
+     <br /> 
+     <div id="finput"> 
+      <p>Comments</p> 
+      <input name="Postmatch_Comments" /> 
+     </div> 
+    </div> 
+   </div> 
+   <br /> 
+   <hr /> 
+   <br /> 
+   <div id="ftools">
+    <button onclick="exportDataJSON()">Export (JSON)</button> 
+    <button onclick="exportDataCSV()">Export (CSV)</button> 
+    <!--<button onclick="rreset()">Reset</button>-->
+   </div>
+  </center> 
+  <script>
+        function exportDataJSON() {
+                var formData = {};
+                var inputs = document.querySelectorAll('input, select');
+                inputs.forEach(function (input) {
+                    formData[input.name] = input.type === 'checkbox' ? input.checked : input.value;
+                });
+                var jsonData = JSON.stringify(formData, null, 2);
+                var blob = new Blob([jsonData], { type: 'application/json' });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'scouting.json';
+                a.click();
+        }
+		
+		function exportDataCSV() {
+                var formData = {};
+                var inputs = document.querySelectorAll('input, select');
+                var csvContent = "";
+                inputs.forEach(function (input) {
+                  formData[input.name] = input.type === 'checkbox' ? input.checked : input.value;
+                });
+                var headers = Object.keys(formData).join(",");
+                csvContent += headers + "\n" + Object.values(formData).join(",");
+                var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'scouting.csv';
+                a.click();
+        }
+    </script>  
+ </body>
+</html>

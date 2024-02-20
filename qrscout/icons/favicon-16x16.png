@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />
+    <title>QR Scout</title>
+
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      href="/icons/favicon-16x16.png"
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link
+      href="/icons/favicon-32x32.png"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="/apple-icon.png" />
+    <meta name="theme-color" content="#00BA00" />
+    <script type="module" crossorigin src="/assets/index-On1jl9Yu.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-bTwK4Yzb.css">
+	<style>
+	    /* Custom CSS Injection */
+	    .text-red-rhr, .font-rhr-ns{color:#001100;}
+		.my-6{color:red;}
+		img{margin-left:39vw;}
+		.hi{font-family:SF Sports Night;src:url("/fonts/SF Sports Night.ttf");font-size:50px;margin-left:41vw;color:white;}
+		.font-rhr-ns{color:black;}
+		body{margin-top:15px;user-select:none;background-color:#005eb8;color:black;font-family:Arial;}
+	</style>
+	<script defer>
+	function rickroll(){document.body.innerHTML="<video style='margin-left:20%;' width='60%' height='60%' loop autoplay><source src='https://ia801509.us.archive.org/10/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4' type='video/mp4'></video>"}
+	
+	function hmm() {
+	    alert("This is a fork of https://github.com/frc2713/qrscout with a custom look.");
+		alert("This website edit isnt truly the best because I dont use TypeScript so I had to manually inject CSS and JavaScript into the page without having to mess with the JS/CSS built by vite.");
+		alert("Theres a bug where 'Speaker Missed' in the 'Autonomous' section of the form gets hidden, You can fix it easily with 'Reset to Default Config' because your browser might use the old config which has some form elements missing. (cache and localstorage is amazing)");
+	}
+	
+	function js_injection() {
+		var theme = document.getElementById("theme");
+		for (var i=0; i<theme.length; i++) {
+		if (theme.options[i].value == 'dark')
+			theme.remove(i);
+		if (theme.options[i].value == 'system')
+			theme.remove(i);
+		}
+		
+		document.querySelectorAll("h1").forEach( (element)=>{
+			if (element.innerHTML.includes('MAPLE RIVER ROBOTICS')) {
+			    element.style.display = 'none';
+			}
+		});
+	}
+	setTimeout(js_injection, 100);
+	
+	if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          .register("/serviceWorker.js")
+          .then((res) => console.log("loaded service worker"))
+          .catch((err) => alert("get a better browser", err));
+      });
+    }
+	</script>
+  </head>
+  <body>
+    <img src="mr.webp" width="300px">
+	<h1 class="hi">Scouting</h1>
+	<a style='font-family:SF Sports Night;src:url("/fonts/SF Sports Night.ttf");font-size:15px;margin-left:43vw;color:white;' href="javascript:hmm();">(Click here to read)</a>
+    <div id="app"></div>
+  </body>
+</html>
